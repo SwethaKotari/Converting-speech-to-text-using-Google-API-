@@ -1,116 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.1 on win32)" generated="2024-01-22T11:56:59.443886" rpa="true" schemaversion="5">
-<suite id="s1" name="Task Suite" source="C:\Users\KNAGASWE\Documents\speechtotext\task_suite.robot">
-<test id="s1-t1" name="Download and Transcribe YouTube Video" line="11">
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-01-22T11:57:00.561567" level="INFO">Starting the transcription process for the YouTube video</msg>
-<arg>Starting the transcription process for the YouTube video</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-01-22T11:57:00.561567" elapsed="0.000000"/>
-</kw>
-<kw name="Set Google Credentials" owner="video_download">
-<arg>${CREDENTIALS_PATH}</arg>
-<status status="PASS" start="2024-01-22T11:57:00.561567" elapsed="0.000000"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-01-22T11:57:00.561567" level="INFO">Google Cloud credentials set successfully</msg>
-<arg>Google Cloud credentials set successfully</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-01-22T11:57:00.561567" elapsed="0.000000"/>
-</kw>
-<kw name="Download Video" owner="video_download">
-<msg time="2024-01-22T11:57:03.881548" level="INFO">[youtube] Extracting URL: https://www.youtube.com/watch?v=-qngILxqGX0&amp;t
-[youtube] -qngILxqGX0: Downloading webpage
-[youtube] -qngILxqGX0: Downloading ios player API JSON
-[youtube] -qngILxqGX0: Downloading android player API JSON
-[youtube] -qngILxqGX0: Downloading m3u8 information
-[info] -qngILxqGX0: Downloading 1 format(s): 18
-[download] Destination: downloaded_videos\Holography (3 Dimensional imaging).mp4
-[download]   0.0% of    6.90MiB at  999.83KiB/s ETA 00:07[download]   0.0% of    6.90MiB at    1.47MiB/s ETA 00:04[download]   0.1% of    6.90MiB at  991.09KiB/s ETA 00:07[download]   0.2% of    6.90MiB at    1.84MiB/s ETA 00:03[download]   0.4% of    6.90MiB at    2.17MiB/s ETA 00:03[download]   0.9% of    6.90MiB at    3.25MiB/s ETA 00:02[download]   1.8% of    6.90MiB at    2.83MiB/s ETA 00:02[download]   3.6% of    6.90MiB at    4.15MiB/s ETA 00:01[download]   7.2% of    6.90MiB at    6.58MiB/s ETA 00:00[download]  14.5% of    6.90MiB at    9.29MiB/s ETA 00:00[download]  29.0% of    6.90MiB at   12.88MiB/s ETA 00:00[download]  58.0% of    6.90MiB at   13.95MiB/s ETA 00:00[download] 100.0% of    6.90MiB at   14.01MiB/s ETA 00:00[download] 100% of    6.90MiB in 00:00:01 at 5.86MiB/s</msg>
-<msg time="2024-01-22T11:57:03.881548" level="INFO">${video_path} = downloaded_videos\Holography (3 Dimensional imaging).mp4</msg>
-<var>${video_path}</var>
-<arg>${YOUTUBE_URL}</arg>
-<arg>${DOWNLOAD_PATH}</arg>
-<status status="PASS" start="2024-01-22T11:57:00.561567" elapsed="3.319981"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-01-22T11:57:03.881548" level="INFO">Video downloaded successfully to downloaded_videos\Holography (3 Dimensional imaging).mp4</msg>
-<arg>Video downloaded successfully to ${video_path}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-01-22T11:57:03.881548" elapsed="0.000000"/>
-</kw>
-<kw name="Extract Audio" owner="video_download">
-<msg time="2024-01-22T11:57:07.232393" level="INFO">MoviePy - Writing audio in temp_audio.wav
-MoviePy - Done.</msg>
-<msg time="2024-01-22T11:57:07.232393" level="INFO">chunk:   0%|                                                                                     | 0/6720 [00:00&lt;?, ?it/s, now=None]chunk:   0%|                                                                             | 3/6720 [00:00&lt;04:54, 22.78it/s, now=None]chunk:   4%|##7                                                                      | 255/6720 [00:00&lt;00:04, 1312.51it/s, now=None]chunk:   8%|#####5                                                                   | 510/6720 [00:00&lt;00:03, 1721.01it/s, now=None]chunk:  11%|########3                                                                | 765/6720 [00:00&lt;00:03, 1913.27it/s, now=None]chunk:  15%|##########7                                                              | 989/6720 [00:00&lt;00:02, 2018.31it/s, now=None]chunk:  18%|#############1                                                          | 1224/6720 [00:00&lt;00:02, 1869.32it/s, now=None]chunk:  24%|#################4                                                      | 1624/6720 [00:00&lt;00:02, 2475.26it/s, now=None]chunk:  29%|####################7                                                   | 1938/6720 [00:00&lt;00:01, 2559.15it/s, now=None]chunk:  33%|########################                                                | 2244/6720 [00:01&lt;00:01, 2517.82it/s, now=None]chunk:  38%|###########################3                                            | 2550/6720 [00:01&lt;00:01, 2594.09it/s, now=None]chunk:  43%|###############################                                         | 2895/6720 [00:01&lt;00:01, 2823.33it/s, now=None]chunk:  50%|###################################7                                    | 3332/6720 [00:01&lt;00:01, 3257.88it/s, now=None]chunk:  55%|#######################################3                                | 3672/6720 [00:01&lt;00:00, 3258.45it/s, now=None]chunk:  60%|##########################################9                             | 4010/6720 [00:01&lt;00:00, 3086.47it/s, now=None]chunk:  65%|##############################################4                         | 4335/6720 [00:01&lt;00:00, 2982.29it/s, now=None]chunk:  69%|#################################################7                      | 4641/6720 [00:01&lt;00:00, 2981.48it/s, now=None]chunk:  74%|#####################################################                   | 4947/6720 [00:01&lt;00:00, 2924.16it/s, now=None]chunk:  79%|########################################################8               | 5304/6720 [00:02&lt;00:00, 3015.68it/s, now=None]chunk:  83%|############################################################1           | 5610/6720 [00:02&lt;00:00, 2905.22it/s, now=None]chunk:  89%|###############################################################8        | 5960/6720 [00:02&lt;00:00, 2989.24it/s, now=None]chunk:  94%|###################################################################4    | 6298/6720 [00:02&lt;00:00, 2940.62it/s, now=None]chunk:  99%|####################################################################### | 6630/6720 [00:02&lt;00:00, 2902.84it/s, now=None]</msg>
-<msg time="2024-01-22T11:57:07.232393" level="INFO">${audio_path} = temp_audio.wav</msg>
-<var>${audio_path}</var>
-<arg>${video_path}</arg>
-<status status="PASS" start="2024-01-22T11:57:03.881548" elapsed="3.350845"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-01-22T11:57:07.248092" level="INFO">Audio extracted successfully to temp_audio.wav</msg>
-<arg>Audio extracted successfully to ${audio_path}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-01-22T11:57:07.248092" elapsed="0.000000"/>
-</kw>
-<kw name="Wait For Download Completion" owner="video_download">
-<arg>${video_path}</arg>
-<status status="PASS" start="2024-01-22T11:57:07.248092" elapsed="0.000000"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-01-22T11:57:07.248092" level="INFO">Video download completed</msg>
-<arg>Video download completed</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-01-22T11:57:07.248092" elapsed="0.000000"/>
-</kw>
-<kw name="Transcribe Audio" owner="video_download">
-<msg time="2024-01-22T11:57:15.493694" level="INFO">Transcription: now let us discuss some of the applications of lasers one important application is holography Hollow means complete and graphy means recording so it is complete recording of the image of the object in normal photography we record only two dimensional image only the intensity of light waves which are reflected from the object is recorded
-
-Successfully extracted the text from  video</msg>
-<msg time="2024-01-22T11:57:15.493694" level="INFO">${transcription} = Transcription: now let us discuss some of the applications of lasers one important application is holography Hollow means complete and graphy means recording so it is complete recording of the image o...</msg>
-<var>${transcription}</var>
-<arg>${audio_path}</arg>
-<status status="PASS" start="2024-01-22T11:57:07.248092" elapsed="8.245602"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-01-22T11:57:15.493694" level="INFO">Transcription completed: Transcription: now let us discuss some of the applications of lasers one important application is holography Hollow means complete and graphy means recording so it is complete recording of the image of the object in normal photography we record only two dimensional image only the intensity of light waves which are reflected from the object is recorded
-</msg>
-<arg>Transcription completed: ${transcription}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-01-22T11:57:15.493694" elapsed="0.012811"/>
-</kw>
-<kw name="Write To File" owner="video_download">
-<arg>${transcription}</arg>
-<arg>${OUTPUT_FILE}</arg>
-<status status="PASS" start="2024-01-22T11:57:15.507510" elapsed="0.000919"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-01-22T11:57:15.508429" level="INFO">Transcription written to file: recognized1.txt</msg>
-<arg>Transcription written to file: ${OUTPUT_FILE}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-01-22T11:57:15.508429" elapsed="0.000000"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-01-22T11:57:15.508429" level="INFO">Transcription process completed</msg>
-<arg>Transcription process completed</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-01-22T11:57:15.508429" elapsed="0.000000"/>
-</kw>
-<status status="PASS" start="2024-01-22T11:57:00.561567" elapsed="14.946862"/>
-</test>
-<status status="PASS" start="2024-01-22T11:56:59.459432" elapsed="16.063647"/>
-</suite>
-<statistics>
-<total>
-<stat pass="1" fail="0" skip="0">All Tasks</stat>
-</total>
-<tag>
-</tag>
-<suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Task Suite">Task Suite</stat>
-</suite>
-</statistics>
-<errors>
-</errors>
-</robot>
