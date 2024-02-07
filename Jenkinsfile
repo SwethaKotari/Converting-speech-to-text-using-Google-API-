@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Install dependencies or run any build steps
-                bat 'pip install -r recognized.txt' // Use 'bat' for Windows shell
+                bat 'pip install -r requirments.txt' // Use 'bat' for Windows shell
             }
         }
 
