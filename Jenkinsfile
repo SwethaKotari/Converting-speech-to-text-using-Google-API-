@@ -2,26 +2,32 @@ pipeline {
     agent any
     
     stages {
-        stage('Checkout') {
+        stage('Bulid') {
             steps {
-                // Checkout code from your Git repository
-                checkout scm
+                bat 'robot --version'
             }
         }
 
-        stage('Build') {
+        stage('Test') {
             steps {
-                // Install dependencies or run any build steps
-                bat 'pip install -r requirements.txt' // Use 'bat' for Windows shell
+                bat 'robot task_suite.robot'
             }
         }
 
         stage('Deploy') {
             steps {
                 // Run your Python script and deploy the result
-                bat 'python example3.py'                // Use 'bat' for Windows shell
-                bat 'copy recognized.txt C:\\Users\\KNAGASWE\\Documents\\speechtotext' // Use 'bat' for Windows shell
+                bat 'copy recognized1.txt C:\\Users\\KNAGASWE\\Documents\\speechtotext'  // Use 'bat' for Windows shell
             }
+        }
+    }
+}
+ post {
+        success {
+            echo 'Pipeline succeeded! Your code is built, tested, and deployed successfully.'
+        }
+        failure {
+            echo 'Pipeline failed! Please check the build, test, or deployment logs for errors.'
         }
     }
 }
