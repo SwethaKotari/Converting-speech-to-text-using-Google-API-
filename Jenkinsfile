@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Bulid') {
             steps {
-                bat 'robot --version'
+                bat 'robotframework --version'
             }
         }
 
