@@ -20,7 +20,7 @@ def set_google_credentials(credentials_path):
 
 def download_video(youtube_url, output_path="."):
     # Download the YouTube video using yt_dlp
-    ydl_opts = {'outtmpl': os.path.join(output_path, '%(title)s.%(ext)s')}
+    ydl_opts = {'outtmpl': os.path.join(output_path, '%(title)s.%(ext)s', 'no_check_certificate': True)}
     with YoutubeDL(ydl_opts) as ydl:
         info_dict = ydl.extract_info(youtube_url, download=True)
     return os.path.join(output_path, f"{info_dict['title']}.{info_dict['ext']}")
