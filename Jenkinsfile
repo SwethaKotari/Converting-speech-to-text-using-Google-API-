@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Check Robot Framework version
-                bat 'robot --version'
+                echo 'Building..'
             }
         }
 
